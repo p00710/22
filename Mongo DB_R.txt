@@ -1,0 +1,24 @@
+Step 1: open cmd--->mongod
+Step2: open another---->mongosh
+In mongosh cmd-->
+show dbs
+use student 
+db.createCollection("kc")
+show collections
+db.kc.insertMany([{"name":"ABCD"},{"name":"XYZ"}])
+db.kc.find()
+exit
+
+
+step3:open rstudio:
+
+install.packages("mongolite") 
+library(mongolite) 
+m=mongo("dataset",url = "mongodb://127.0.0.1:27017/student") 
+m$insert('{"name":"abc"}')
+
+step4: run the rstudio code , now go back to mongosh cmd
+show dbs
+use student
+show collections
+db.dataset.find()

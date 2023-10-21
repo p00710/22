@@ -1,0 +1,19 @@
+Step 1
+Install the following:
+Python 2.7 , Java 1.8(jdk,jre), Cassandra 3.11
+
+Step 2
+In the environment variables go to System variables set the path for java as JAVA_HOME 
+(jdk path)(jre path) and cassandra as CASSANDRA_HOME
+
+Step 3
+ In System Variables go to path -> set the path for java (both jdk and jre path), python and 
+cassandra as shown below
+
+Step 4
+go till the /bin path of cassandra click and type (cmd) (Enter) 
+type (cassandra)
+
+Step 5
+go till the /bin path of cassandra click and type (cmd) (Enter) 
+type (cqlsh)

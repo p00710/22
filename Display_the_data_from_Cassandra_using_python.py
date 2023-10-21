@@ -1,0 +1,43 @@
+from cassandra.cluster import Cluster
+
+cluster = Cluster(['127.0.0.1'])
+session = cluster.connect()
+
+keyspace_name = 'college_new'  # Adjusted keyspace name to lowercase
+replication_options = {
+    'class': 'SimpleStrategy',
+    'replication_factor': 1
+}
+
+create_keyspace_query = f"""
+CREATE KEYSPACE IF NOT EXISTS {keyspace_name}
+WITH REPLICATION = {str(replication_options)}
+"""
+
+session.execute(create_keyspace_query)
+print("Keyspace Created")
+
+create_query = session.prepare("CREATE TABLE college_new.student1 (id int PRIMARY KEY, name text, address text)")  # Adjusted keyspace and table name to lowercase
+session.execute(create_query)
+print("Table Created")
+
+# Insert data
+session.execute("INSERT INTO college_new.student1 (id, name, address) VALUES (1, 'Abc', 'Delhi')")
+session.execute("INSERT INTO college_new.student1 (id, name, address) VALUES (2, 'Def', 'Kerala')")
+session.execute("INSERT INTO college_new.student1 (id, name, address) VALUES (3, 'Ghi', 'Nashik')")
+print("Data Inserted")
+
+# Update data
+update_query = session.prepare("UPDATE college_new.student1 SET address = 'Delhi' WHERE id = 2")
+session.execute(update_query)
+print("Data Updated")
+
+# Select and print data
+select_query = "SELECT * FROM college_new.student1"
+result = session.execute(select_query)
+print("Student Details")
+for row in result:
+    print(f"ID: {row.id}, Name: {row.name}, Address: {row.address}")
+
+session.shutdown()
+cluster.shutdown()

@@ -1,0 +1,60 @@
+data model using Cassandra
+Step 1
+After installing Cassandra
+
+Step 2
+go till the /bin path of cassandra click and type (cmd) (Enter) 
+type (cassandra)
+
+Step 3
+go till the /bin path of cassandra click and type (cmd) (Enter) 
+type (cqlsh)
+
+Step 4
+type (help)
+
+Step 5
+type
+Create keyspace Abc with REPLICATION={‘class’:’SimpleStrategy’,’replication_factor’:3);
+
+Step 6
+type
+Use Abc;
+
+Step 7
+type
+Create table employees(id int primary key,name text,salary varint);
+
+Step 8
+type
+select * from employees
+
+Step 9
+type
+Insert into employees(id,name,salary) values(103,’Def’,20000);     (Add more 2/3 entries same)
+
+Step 10
+type
+select * from employees
+
+Step 11
+type
+Update employees set name=’Defgh’ where id=04;
+
+
+Step 12 (Create clustering on emp_no in the descending order)
+type
+Create table emp_track(emp_noint,depttext,nametext,PRIMARY KEY(dept,emp_no))
+WITH Clustering ORDER BY(emp_nodesc);
+
+Step 13
+type
+Insert into emp_track(emp_no,dept,name) values(123,’database’,’Xyz’);  (Add more 2/3 entries same)
+Select * from emp_track;
+
+
+
+
+
+
+

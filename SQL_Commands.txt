@@ -1,0 +1,44 @@
+(SQL Commands)
+Step 1
+
+-- Create College table
+CREATE TABLE College (
+    CollegeID INT PRIMARY KEY,
+    CollegeName VARCHAR(50),
+    Email VARCHAR(100)
+);
+
+-- Create Students table with a foreign key reference to College
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    StudentName VARCHAR(50),
+    EnrollDate DATE,
+    CollegeID INT,
+    FOREIGN KEY (CollegeID) REFERENCES College(CollegeID)
+);
+
+
+Step 2
+
+-- Insert data into the College table
+INSERT INTO College (CollegeID, CollegeName, Email)
+VALUES
+    (1, 'ABC University', 'abc@example.com'),
+    (2, 'XYZ College', 'xyz@example.com'),
+    (3, '123 School', '123@example.com');
+
+Step 3
+
+-- Insert data into the Students table
+INSERT INTO Students (StudentID, StudentName, EnrollDate, CollegeID)
+VALUES
+    (1, 'DEF', '2023-09-15', 1),
+    (2, 'HIJ', '2023-08-20', 2),
+    (3, 'KLMNO', '2023-09-01', 1),
+    (4, 'PQRST', '2023-08-15', 3); 
+
+Step 4
+
+SELECT StudentName, EnrollDate, (SELECT CollegeName FROM College WHERE CollegeID = Students.CollegeID) AS CollegeName FROM Students;
+
+

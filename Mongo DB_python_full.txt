@@ -1,0 +1,33 @@
+import pymongo
+
+# --------------------------------------------------- 1. Establish a connection with Mongodb Create a database
+# connect to mongodb
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+# --------------------------------------------------- 2. Verify in the shell whether database is displayed or not.
+# run following commands in mongosh shell
+#> show dbs
+
+# --------------------------------------------------- 3. List the database and verify if it exists
+# get list of existing db
+existing_dbs = client.list_database_names()
+print(existing_dbs)
+
+# create db
+db_name = "college"
+if db_name in existing_dbs:
+    print(f"""Database with name "{db_name}" already exists.""")
+else:
+    client[db_name]
+    print(f"""Created database with name "{db_name}".""")
+
+# use your db
+db = client.get_database(db_name)
+
+# create collection (ref as table in MySQL)
+collection = db["students"]
+
+# before inserting data - list collections in you db
+print("Before: ", db.list_collection_names())
+
+# clear before inserting new values

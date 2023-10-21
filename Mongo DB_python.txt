@@ -1,0 +1,45 @@
+Step 1: open cmd--->mongod
+Step2: open another---->mongosh
+In mongosh cmd-->
+show dbs
+use student 
+db.createCollection("kc")
+show collections
+db.kc.insertMany([{"name":"ABCD"},{"name":"XYZ"}])
+db.kc.find()
+exit
+
+
+step3:open python:
+
+import pymongo
+myclient = pymongo.MongoClient("mongodb://127.0.0.1:27017/")
+
+mydb = myclient["Mydb"]
+print(myclient.list_database_names())
+mycol = mydb["Stud"]
+print(mydb.list_collection_names())
+mydict = [{"name":"aanya","marks":23},{"name":"Sai","marks":25}]
+x = mycol.insert_many(mydict)
+
+
+
+dblist = myclient.list_database_names()
+
+if "Mydb" in dblist:
+    print("yes")
+else:
+    print("no")
+    
+y = mycol.find_one()
+print(y)
+
+print("multiple")
+for z in mycol.find():
+    print(z)
+
+step4: run the python code , now go back to mongosh cmd
+show dbs
+use Mydb
+show collections
+db.Stud.find()
