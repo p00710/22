@@ -1,0 +1,44 @@
+1)Why is HDFS fault-tolerant?
+HDFS (Hadoop Distributed File System) is fault-tolerant because it replicates data across multiple nodes, allowing it to recover from hardware failures.
+
+2)What is map reduce
+MapReduce is a programming model and processing framework for distributed data processing, commonly used in Hadoop, that involves two phases: mapping data and reducing the results.
+
+3)What is cloudera
+Cloudera is a company that provides a platform for big data analytics and offers software, support, and services around Hadoop and related technologies
+
+4)What is django
+Django is a high-level Python web framework that simplifies web development by providing tools and libraries for building web applications.
+
+5)What is Cassandra
+Cassandra is a distributed NoSQL database designed for scalability and high availability, used for managing large volumes of data across multiple nodes.
+
+6)What is mongodb
+MongoDB is a NoSQL database that stores data in a flexible, JSON-like format and is known for its scalability and flexibility.
+
+7)How is Hadoop and Big Data related?
+Hadoop is a framework for processing and storing large datasets, often associated with big data due to its ability to handle massive data volumes.
+
+8)Applications of big data
+Applications of big data include improving customer experiences, healthcare analytics, fraud detection, and optimizing supply chains, among others.
+
+9)What is yarn
+YARN (Yet Another Resource Negotiator) is a resource management layer in Hadoop that manages and allocates resources for running applications.
+
+10)Features of Hadoop
+Features of Hadoop include scalability, fault tolerance, cost-effectiveness, and the ability to process both structured and unstructured data.
+
+11)List a few of the largest Hadoop users in the world.
+Some of the largest Hadoop users in the world include Facebook, Yahoo, eBay, and Twitter.
+
+12)What is sentiment analysis
+Sentiment analysis is the process of determining the emotional tone or sentiment expressed in a piece of text, often used in social media and customer feedback analysis.
+
+13)What is clustering
+Clustering is a machine learning technique that groups data points into clusters based on similarity, helping identify patterns or relationships in data.
+
+14)What is pygal
+Pygal is a Python library for creating interactive and scalable vector graphics (SVG) charts and graphs.
+
+15)Apriori Algorithm
+The Apriori algorithm is a data mining technique used for discovering frequent itemsets in a transaction database.
